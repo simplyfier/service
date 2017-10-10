@@ -1,6 +1,6 @@
 <?php
 /**
- * StupidlySimple Framework - A PHP Framework For Lazy Developers
+ * StupidlySimple Framework - A PHP Framework For Lazy Developers.
  *
  * Copyright (c) 2017 Fariz Luqman
  *
@@ -22,37 +22,37 @@
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- * @package     StupidlySimple
  * @author      Fariz Luqman <fariz.fnb@gmail.com>
  * @copyright   2017 Fariz Luqman
  * @license     MIT
+ *
  * @link        https://stupidlysimple.github.io/
  */
+
 namespace Simplyfier\Service;
 
 /**
- * Class ServiceContainer
- * @package Simplyfier\Service
+ * Class ServiceContainer.
  *
  * @since 0.5.0
  */
-class ServiceContainer {
+class ServiceContainer
+{
+    /**
+     * @return ServiceContainer|object
+     *
+     * @since 0.5.0
+     */
+    public function getThis()
+    {
+        return $this;
+    }
 
-  /**
-   * @return ServiceContainer|object
-   *
-   * @since 0.5.0
-   */
-  public function getThis()
-  {
-    return $this;
-  }
-
-  /**
-   * @since 0.5.0
-   */
-  public function dumpThis()
-  {
-    dd($this);
-  }
+    /**
+     * @since 0.5.0
+     */
+    public function dumpThis()
+    {
+        dd($this);
+    }
 }
