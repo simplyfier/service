@@ -1,6 +1,6 @@
 <?php
 /**
- * StupidlySimple Framework - A PHP Framework For Lazy Developers
+ * StupidlySimple Framework - A PHP Framework For Lazy Developers.
  *
  * Copyright (c) 2017 Fariz Luqman
  *
@@ -22,27 +22,30 @@
  * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  *
- * @package     StupidlySimple
  * @author      Fariz Luqman <fariz.fnb@gmail.com>
  * @copyright   2017 Fariz Luqman
  * @license     MIT
+ *
  * @link        https://stupidlysimple.github.io/
  */
+
 namespace Simplyfier;
 
 /**
  * Class Service
  * Service is where all the applications written by user resides, for both
- * input and output processing
+ * input and output processing.
  *
- * @package Simplyfier
  *
  * @since 0.5.0
  */
-class Service {
+class Service
+{
     /**
-     * Contains the object of instantiation of the Service class
+     * Contains the object of instantiation of the Service class.
+     *
      * @static
+     *
      * @var object
      *
      * @since 0.5.0
@@ -56,14 +59,15 @@ class Service {
 
     /**
      * @static
+     *
      * @return Service|object
      *
      * @since 0.5.0
      */
     public static function loadServices()
     {
-        if(isset(self::$serviceObject) === false){
-            self::$serviceObject = new self;
+        if (isset(self::$serviceObject) === false) {
+            self::$serviceObject = new self();
         }
 
         self::$serviceObject->prepare();
@@ -72,17 +76,18 @@ class Service {
     }
 
     /**
-     * Object preparer
+     * Object preparer.
      *
      * @since 0.5.0
      */
-    private function prepare(){
-        if(isset($config) === false){
+    private function prepare()
+    {
+        if (isset($config) === false) {
             $this->config = Config::get('services');
         }
 
-        foreach($this->config as $className => $varName){
-            $this->$varName = new $className;
+        foreach ($this->config as $className => $varName) {
+            $this->$varName = new $className();
         }
     }
 }
